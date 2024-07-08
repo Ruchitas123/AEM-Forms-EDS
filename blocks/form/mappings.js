@@ -8,14 +8,14 @@ export default async function componentDecorator(fd) {
     const module = await import('./components/file.js');
     return module.default;
   }
+  if (fieldType === 'range') {
+    const module = await import('./components/range.js');
+    return module.default;
+  }
   if (type.endsWith('wizard')) {
     const module = await import('./components/wizard.js');
     return module.default;
   }
   return null;
-  if (fieldType === 'range') {
-    const module = await import('./components/range.js');
-    return module.default;
-  }
-  return null; // null should be returned to use the original markup
+ 
 }
