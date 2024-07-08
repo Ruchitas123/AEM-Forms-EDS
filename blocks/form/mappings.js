@@ -13,4 +13,9 @@ export default async function componentDecorator(fd) {
     return module.default;
   }
   return null;
+  if (fieldType === 'range') {
+    const module = await import('./components/range.js');
+    return module.default;
+  }
+  return null; // null should be returned to use the original markup
 }
